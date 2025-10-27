@@ -1,13 +1,25 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
+
+int findElement(int arr[], int n, int key) {
+    for (int i = 0; i < n; i++)
+        if (arr[i] == key)
+            return i;
+    return -1;
+}
+
 int main() {
-    int arr[5];
-    cout << "Введіть 5 чисел: ";
-    for (int i = 0; i < 5; i++) cin >> arr[i];
-    sort(arr, arr + 5);
-    double mean = 0;
-    for (int i = 0; i < 5; i++) mean += arr[i];
-    mean /= 5;
-    cout << "Середнє: " << mean << ", Медіана: " << arr[2];
+    int n, arr[100], key;
+    cout << "Введіть кількість елементів: ";
+    cin >> n;
+    cout << "Введіть елементи: ";
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    cout << "Введіть число для пошуку: ";
+    cin >> key;
+    int index = findElement(arr, n, key);
+    if (index != -1)
+        cout << "Елемент знайдено на позиції " << index + 1;
+    else
+        cout << "Елемент не знайдено.";
+    return 0;
 }
