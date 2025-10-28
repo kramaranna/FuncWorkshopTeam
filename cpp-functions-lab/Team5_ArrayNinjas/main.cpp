@@ -4,8 +4,10 @@ using namespace std;
 void findMinMax(int arr[], int size) {
     int minVal = arr[0], maxVal = arr[0];
     for (int i = 1; i < size; i++) {
-        if (arr[i] < minVal) minVal = arr[i];
-        if (arr[i] > maxVal) maxVal = arr[i];
+        if (arr[i] < minVal) 
+            minVal = arr[i];
+        if (arr[i] > maxVal) 
+            maxVal = arr[i];
     }
     cout << "Мінімум: " << minVal << ", Максимум: " << maxVal;
 }
